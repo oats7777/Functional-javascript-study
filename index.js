@@ -9,6 +9,13 @@ var users = [
   { id: 8, name: 'MP', age: 23 },
 ];
 
+function _each(list, iter) {
+  for (var i = 0; i < list.length; i++) {
+    iter(list[i]);
+  }
+  return list;
+}
+
 function _filter(list, predi) {
   var new_list = [];
   _each(list, function(val) {
@@ -23,13 +30,6 @@ function _map(list, mapper) {
     new_list.push(mapper(val));
   });
   return new_list;
-}
-
-function _each(list, iter) {
-  for (var i = 0; list.length < i; i++) {
-    iter(list[i]);
-  }
-  return list;
 }
 
 function _curry(fn) {
